@@ -20,4 +20,14 @@ use Illuminate\Http\Request;
 Route::post('login', 'LoginController@authenticate')->name('Authenticate');
 
 Route::apiResource('reservation', 'ReservationController') 
+	->middleware('verify.propel.authentification');
+
+Route::apiResource('bloc', 'BlocController') 
 	->middleware('verify.propel.authentification');   
+
+Route::apiResource('travee', 'TraveeController') 
+	->middleware('verify.propel.authentification');  
+
+Route::apiResource('pile', 'PileController') 
+	->middleware('verify.propel.authentification');  
+
